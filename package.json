@@ -1,0 +1,26 @@
+{
+  "name": "cordova-plugin-pagmovel",
+  "version": "1.0.15",
+  "description": "PagMovelCordovaPlugin",
+  "cordova": {
+    "id": "cordova-plugin-pagmovel",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://stash.matera.com/scm/pagmovel/cordova-plugin-pagmovel.git"
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "MATERA Systems",
+  "license": "Apache-2.0",
+  "engines": {},
+  "devDependencies": {},
+  "dependencies": {}
+}

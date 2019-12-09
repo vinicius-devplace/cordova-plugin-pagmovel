@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-pagmovel" version="1.0.15"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>PagMovelCordovaPlugin</name>
+    <js-module name="PagMovelCordovaPlugin" src="www/PagMovelCordovaPlugin.js">
+        <clobbers target="cordova.plugins.PagMovelCordovaPlugin"/>
+    </js-module>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PagMovelCordovaPlugin">
+                <param name="android-package"
+                       value="com.matera.payments.PagMovelCordovaPlugin"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/com/matera/payments/PagMovelCordovaPlugin.java"
+                     target-dir="src/com/matera/payments/PagMovelCordovaPlugin"/>
+        <source-file src="libs/commons-codec-1.3.jar" target-dir="libs"/>
+        <source-file src="libs/payments-qrcode-android-1.0.14.jar" target-dir="libs"/>
+        <source-file src="libs/qrcode-commons-android-1.0.8.jar" target-dir="libs"/>
+        <source-file src="libs/qrcode-commons-core-1.0.8.jar" target-dir="libs"/>
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="PagMovelCordovaPlugin">
+                <param name="ios-package" value="PagMovelCordovaPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/PagMovelCordovaPlugin-Bridging-Header.h"/>
+        <source-file src="src/ios/PagMovelCordovaPlugin.swift"/>
+
+        <dependency id="cordova-plugin-add-swift-support" version="1.6.0"/>
+        <framework src="ios-libs/PaymentQRCode.framework" custom="true" embed="true"/>
+        <framework src="ios-libs/BigInt.framework" custom="true" embed="true"/>
+        <framework src="ios-libs/QRCode.framework" custom="true" embed="true"/>
+        <framework src="ios-libs/SwiftKeychainWrapper.framework" custom="true" embed="true"/>
+        <framework src="ios-libs/SwiftyRSA.framework" custom="true" embed="true"/>
+        <framework src="ios-libs/SipHash.framework" custom="true" embed="true"/>
+    </platform>
+</plugin>

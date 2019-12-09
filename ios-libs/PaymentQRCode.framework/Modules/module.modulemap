@@ -1,0 +1,11 @@
+framework module PaymentQRCode {
+  umbrella header "PaymentQRCode.h"
+
+  export *
+  module * { export * }
+}
+
+module PaymentQRCode.Swift {
+    header "PaymentQRCode-Swift.h"
+    requires objc
+}

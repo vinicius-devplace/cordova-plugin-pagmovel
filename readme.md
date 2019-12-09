@@ -1,0 +1,1 @@
+Meios de Pagamento - Plugin Cordova
